@@ -101,14 +101,14 @@
     "skipLibCheck": true,                                 /* Skip type checking all .d.ts files. */
 
     "paths": {
-      "@core/*": ["core/*"],
-      "@domains/*": ["domains/*"],
+      "@domain/*": ["core/domain/*"],
+      "@application/*": ["core/application/*"],
       "@infrastructure/*": ["infrastructure/*"],
       "@config/*": ["infrastructure/config/*"],
       // "@errors/*": ["errors/*"],
       // "@interfaces/*": ["interfaces/*"],
       "@utils/*": ["utils/*"],
-      "@database/*": ["database/*"]
+      "@database/*": ["infrastructure/database/*"]
 
     },
   },
