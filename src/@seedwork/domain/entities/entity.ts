@@ -5,13 +5,13 @@ type IDateProps =
   | { createdAt?: Date; updatedAt?: Date; deletedAt?: Date }
   | undefined;
 
-export class Entity<Props> {
+export class Entity<Props = any> {
   public readonly uniqueEntityID: UniqueEntityId;
 
   public readonly auditValueObject: Audit;
 
   constructor(public readonly props: IDateProps & Props, id?: UniqueEntityId) {
-    this.uniqueEntityID == id || new UniqueEntityId();
+    this.uniqueEntityID = id ?? new UniqueEntityId();
     this.auditValueObject = new Audit({
       createdAt: props?.createdAt ?? new Date(),
       updatedAt: props?.updatedAt,
