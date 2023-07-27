@@ -20,14 +20,11 @@ export abstract class YupValidator<T> implements IValidatorFields<T> {
       if (!(error instanceof yup.ValidationError)) throw error;
       this.errors = {};
 
-      if (error.inner.length) {
-        for (const fieldError of error.inner) {
-          const field = fieldError.path;
-          this.errors[field as string] = fieldError.errors;
-        }
-      }
-
-      console.log(this.errors);
+      error.inner.forEach(err => {
+        if (!this.errors[err.path as string])
+          this.errors[err.path as string] = [];
+        this.errors[err.path as string].push(...err.errors);
+      });
 
       return false;
     }

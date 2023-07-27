@@ -1,4 +1,4 @@
-import { ValidationError } from '../../../errors';
+import { ValidationError } from '../../../domain/errors';
 import { ValidatorRules } from '../validators-rules';
 
 describe('Validation rules Unit teste', () => {

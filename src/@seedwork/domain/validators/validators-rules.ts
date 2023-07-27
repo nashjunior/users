@@ -1,4 +1,4 @@
-import { ValidationError } from '../../errors';
+import { ValidationError } from '../../domain/errors';
 
 export class ValidatorRules<T extends string | number | Date | boolean> {
   protected constructor(protected values: T, protected field: string) {}
