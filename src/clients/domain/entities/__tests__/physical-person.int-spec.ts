@@ -127,7 +127,6 @@ describe('Physical Person integration tests', () => {
   });
 
   it('should return a valid physical person', async () => {
-    expect.assertions(0);
     const props = {
       name: 'some-person',
       bornDate: new Date(),
@@ -135,6 +134,21 @@ describe('Physical Person integration tests', () => {
       genre: 'A',
     };
     const person = await PhysicalPerson.create(props);
-    person.update('updated name', '2'.repeat(11), new Date(), 'B');
+
+    expect(person.cpf).toBe(props.cpf);
+    expect(person.bornDate).toEqual(props.bornDate);
+    expect(person.genre).toBe(props.genre);
+
+    const updatedName = 'updated name';
+    const updatedCpf = '2'.repeat(11);
+    const updatedBornDate = new Date();
+    const updatedGenre = 'B';
+
+    await person.update(updatedName, updatedCpf, updatedBornDate, updatedGenre);
+
+    expect(person.person.name).toBe(updatedName);
+    expect(person.cpf).toBe(updatedCpf);
+    expect(person.bornDate).toEqual(updatedBornDate);
+    expect(person.genre).toBe(updatedGenre);
   });
 });

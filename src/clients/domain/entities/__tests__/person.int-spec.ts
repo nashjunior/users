@@ -71,7 +71,7 @@ describe('Person integration tests', () => {
     it('should return a valid person', async () => {
       expect.assertions(0);
       const person = await Person.create({ name: 'some-person' });
-      person.update('person 1');
+      await person.update('person 1');
     });
   });
 });
