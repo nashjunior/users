@@ -1,4 +1,3 @@
-import 'reflect-metadata';
 import { Entity } from '../../../@seedwork/domain/entities';
 import { UniqueEntityId } from '../../../@seedwork/domain/value-objects';
 import { PersonValidatorFactory } from '../validators';
