@@ -1,4 +1,4 @@
-import { Entity } from '../../../../@seedwork/domain/entities';
+import { Entity } from '../../entities';
 import { InMemorySearchbleRepository } from '../abstract-in-memory.repository';
 
 type IStubEntityProps = { name: string; price: number };
@@ -169,7 +169,7 @@ describe('InMemorySearchRepository unit tests', () => {
         orderSort as any,
       );
       expect(sortedItems).toStrictEqual(
-        newFieldSort.reduce<T[]>((previousSorted, fieldSort, index) => {
+        newFieldSort.reduce<Entity[]>((previousSorted, fieldSort, index) => {
           return previousSorted.sort((a, b) => {
             if (!a.props[fieldSort]) return 0;
             if (!b.props[fieldSort]) return 0;

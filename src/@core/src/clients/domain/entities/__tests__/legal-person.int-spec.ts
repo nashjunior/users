@@ -1,5 +1,4 @@
-import { EntityValidationError } from '../../../../@seedwork/domain/errors';
-
+import { EntityValidationError } from '@seedwork/domain/errors/validation-error';
 import 'reflect-metadata';
 import { LegalPerson } from '../legal-person';
 import { Person } from '../person';

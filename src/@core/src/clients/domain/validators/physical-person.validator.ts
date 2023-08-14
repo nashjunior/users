@@ -1,6 +1,6 @@
-import { YupValidator } from '../../../@seedwork/domain/validators/yup-validator';
 import { IPersonProps } from '../entities/physical-person';
 import * as yup from 'yup';
+import { YupValidator } from '@seedwork/domain/validators';
 
 export const PersonSchema = yup
   .object()
