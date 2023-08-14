@@ -43,3 +43,6 @@ node_modules/**
 build
 
 uploads
+
+**/node_modules
+**/coverage
